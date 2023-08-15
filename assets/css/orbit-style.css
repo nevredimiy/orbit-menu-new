@@ -1,0 +1,197 @@
+
+.orbit {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 12rem;
+  height: 12rem;
+  margin: 0 auto;
+  margin-top: 40px;
+  z-index: 10;
+  -webkit-transition: opacity 1s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: opacity 1s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, opacity 1s ease-in-out;
+  transition: transform 0.3s ease-in-out, opacity 1s ease-in-out, -webkit-transform 0.3s ease-in-out;
+}
+@media (min-width: 390px) {
+  .orbit {
+    width: 16rem;
+    height: 16rem;
+  }
+}
+@media (min-width: 640px) {
+  .orbit {
+    width: 24rem;
+    height: 24rem;
+  }
+}
+@media (min-width: 768px) {
+  .orbit {
+    margin-top: auto;
+  }
+}
+.orbit__planet {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  background-color: lightgray;
+  border-radius: 100%;
+  width: 3.5rem;
+  height: 3.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  z-index: 5;
+  -webkit-transition: width 0.3s, height 0.3s;
+  transition: width 0.3s, height 0.3s;
+}
+.orbit__planet:focus {
+  outline: 2px solid var(--dark-brown);
+}
+@media (any-hover: hover) {
+  .orbit__planet:hover {
+    width: 5rem;
+    height: 5rem;
+  }
+  .orbit__planet:hover .orbit__planet-img {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+}
+.orbit__planet:active {
+  outline: none;
+}
+.orbit__planet-img {
+  width: 2rem;
+  height: 2rem;
+  -webkit-transition: width 0.3s;
+  transition: width 0.3s;
+}
+.orbit__list {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin: 0 auto;
+  width: 14rem;
+  height: 14rem;
+}
+@media (min-width: 768px) {
+  .orbit__list {
+    width: 18rem;
+    height: 18rem;
+  }
+}
+.orbit__item {
+  position: absolute;
+  left: 0;
+  -webkit-transform-origin: 6rem;
+  -ms-transform-origin: 6rem;
+  transform-origin: 6rem;
+  cursor: pointer;
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+  transition: transform 0.3s, -webkit-transform 0.3s;
+}
+@media (min-width: 390px) {
+  .orbit__item {
+    -webkit-transform-origin: 7rem;
+    -ms-transform-origin: 7rem;
+    transform-origin: 7rem;
+  }
+}
+@media (min-width: 768px) {
+  .orbit__item {
+    -webkit-transform-origin: 9rem;
+    -ms-transform-origin: 9rem;
+    transform-origin: 9rem;
+  }
+}
+.orbit__link {
+  font-size: 10px;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 100%;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  -webkit-transition: width 0.3s, height 0.3s, -webkit-transform 0.3s;
+  transition: width 0.3s, height 0.3s, -webkit-transform 0.3s;
+  transition: width 0.3s, height 0.3s, transform 0.3s;
+  transition: width 0.3s, height 0.3s, transform 0.3s, -webkit-transform 0.3s;
+}
+@media (any-hover: hover) {
+  .orbit__link:hover {
+    width: 3.25rem;
+    height: 3.25rem;
+  }
+  .orbit__link:hover .orbit__link-icon {
+    opacity: 0;
+  }
+  .orbit__link:hover .orbit__link-text {
+    opacity: 100;
+  }
+}
+.orbit__link-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+}
+@media (min-width: 390px) {
+  .orbit__link-icon {
+    width: 2.25rem;
+    height: 2.25rem;
+  }
+}
+.orbit__link-text {
+  position: absolute;
+  opacity: 0;
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+}
+
+.element-animation {
+  opacity: 0;
+  -webkit-transform: translateY(-30%);
+  -ms-transform: translateY(-30%);
+  transform: translateY(-30%);
+}
+
+.element-show {
+  opacity: 100;
+  -webkit-transform: translateY(0);
+  -ms-transform: translateY(0);
+  transform: translateY(0);
+}
